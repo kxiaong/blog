@@ -38,7 +38,7 @@ func runWeb(c *cli.Context) error {
 func LetsRocknRoll() {
 	engine := gin.Default()
 	engine.Static("/static", conf.C.Web.WebStaticDir)
-	engine.LoadHTMLGlob("templates/*")
+	engine.LoadHTMLGlob("templates/**/*")
 
 	engine.GET("/", controllers.Index)
 

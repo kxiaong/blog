@@ -16,6 +16,7 @@ func init() {
 	cmds = []*cli.Command{
 		web.Web,
 		tools.InitDB,
+		tools.MigrateDB,
 	}
 }
 

@@ -26,13 +26,22 @@ func CreateTable(noPrompt bool) error {
 		}
 	}
 
+	// change table, change here
 	db.DB.DropTableIfExists(&Article{})
+	db.DB.DropTableIfExists(&User{})
 
 	_db := db.DB.LogMode(true)
 	if conf.C.Database.Driver == "mysql" {
 		_db = db.DB.Set("gorm:table_options", "ENGINE=InnoDB CHARSET=utf8")
 	}
-	return _db.CreateTable(&Article{}).Error
+
+	if err := _db.CreateTable(&Article{}).Error; err != nil {
+		return err
+	}
+	if err := _db.CreateTable(&User{}).Error; err != nil {
+		return err
+	}
+	return nil
 }
 
 func MigrateTable() error {
@@ -43,5 +52,12 @@ func MigrateTable() error {
 	}
 
 	// when adding a model, add AutoMigrate here
-	return _db.AutoMigrate(&Article{}).Error
+	if err := _db.AutoMigrate(&User{}).Error; err != nil {
+		return err
+	}
+	if err := _db.AutoMigrate(&Article{}).Error; err != nil {
+		return err
+	}
+
+	return nil
 }

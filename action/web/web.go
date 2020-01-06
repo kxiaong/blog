@@ -3,6 +3,9 @@ package web
 import (
 	"github.com/blog/conf"
 	"github.com/blog/controllers"
+	"github.com/blog/library/db"
+	"github.com/blog/library/log"
+	"github.com/blog/library/redis"
 
 	"github.com/gin-gonic/gin"
 	"github.com/urfave/cli"
@@ -31,14 +34,19 @@ func init() {
 }
 
 func runWeb(c *cli.Context) error {
+	db.Init()
+	redis.Init()
+	log.Init()
+
+	// All check, Let's rock and roll!
 	LetsRocknRoll()
 	return nil
 }
 
 func LetsRocknRoll() {
 	engine := gin.Default()
-	engine.Static("/static", conf.C.Web.WebStaticDir)
-	engine.LoadHTMLGlob("templates/**/*")
+	//engine.Static("/static", conf.C.Web.WebStaticDir)
+	//engine.LoadHTMLGlob("templates/**/*")
 
 	engine.GET("/", controllers.Index)
 

@@ -5,8 +5,11 @@
 		"webstaticdir": "./static"
 	},
 	"Redis": {
-		"addr": "localhost",
-		"password": ""
+		"addr": "localhost:6379",
+		"password": "",
+		"db": 0,
+		"poolsize": 20
+
 	},
 	"Database": {
 		"Driver": "postgres",
@@ -19,7 +22,7 @@
 		}
 	},
 	"Log":{
-		"type": "info",
-		"level": 0
+		"type": "json",
+		"level": 3
 	}
 }

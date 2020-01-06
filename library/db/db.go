@@ -11,30 +11,35 @@ import (
 
 var DB *gorm.DB
 
-func init() {
-	fmt.Println("db init...")
-	fmt.Println(conf.C.Database.Postgres)
+func Init() {
 	var dsn string
-	fmt.Println(conf.C.Database.Postgres.Host)
-	dsn = fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s",
-		conf.C.Database.Postgres.Host,
-		conf.C.Database.Postgres.Port,
-		conf.C.Database.Postgres.User,
-		conf.C.Database.Postgres.DBName,
-		conf.C.Database.Postgres.Password,
-	)
+	if conf.C.Database.Driver == "mysql" {
+		dsn = fmt.Sprintf("%s@%s/%s?charset=utf8&parseTime=True&loc=Local",
+			conf.C.Database.Mysql.UserPassword,
+			conf.C.Database.Mysql.HostPort,
+			conf.C.Database.Mysql.DB,
+		)
+	} else if conf.C.Database.Driver == "postgres" {
+		dsn = fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s",
+			conf.C.Database.Postgres.Host,
+			conf.C.Database.Postgres.Port,
+			conf.C.Database.Postgres.User,
+			conf.C.Database.Postgres.DBName,
+			conf.C.Database.Postgres.Password,
+		)
+	} else {
+		panic(fmt.Sprintf("invalid db driver: %s", conf.C.Database.Driver))
+	}
 
 	var err error
-	fmt.Println("postgres conn sql: ", dsn)
 	DB, err = gorm.Open("postgres", dsn)
 	if err != nil {
 		panic(err)
 	}
 
-	err = DB.DB().Ping()
-	if err != nil {
-		fmt.Println("DB ping failed: ", err)
-		panic(err)
+	// Is DB ok?
+	if err = DB.DB().Ping(); err != nil {
+		panic(fmt.Sprintf("Ping db failed: %s", err.Error()))
 	}
 
 	DB.DB().SetConnMaxLifetime(30 * time.Second)

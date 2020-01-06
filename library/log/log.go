@@ -8,8 +8,8 @@ import (
 	"os"
 	"runtime"
 
+	"github.com/blog/conf"
 	logging "github.com/op/go-logging"
-	"mysite/conf"
 )
 
 type RequestID string

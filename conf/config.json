@@ -1,0 +1,25 @@
+{
+	"Web":{
+		"appname": "mysite",
+		"listenport": "localhost:8080",
+		"webstaticdir": "./static"
+	},
+	"Redis": {
+		"addr": "localhost",
+		"password": ""
+	},
+	"Database": {
+		"Driver": "postgres",
+		"Postgres":{
+			"host": "localhost",
+			"port": "5432",
+			"user": "xiao",
+			"password": "xiaoxiao123",
+			"dbname": "test"
+		}
+	},
+	"Log":{
+		"type": "info",
+		"level": 0
+	}
+}

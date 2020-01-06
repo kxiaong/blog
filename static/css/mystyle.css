@@ -1,0 +1,15 @@
+html{
+	background-color: #FFFAF0;
+}
+
+p {
+	color: sienna;
+	text-align: middle; 
+	font-size: 16pt;
+}
+
+div {
+	text-align: center;
+	background-color: #F5DEB3;
+	padding: .5rem;
+}

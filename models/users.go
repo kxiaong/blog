@@ -3,9 +3,9 @@ package models
 import (
 	"time"
 
-	"github.com/blog/library/db"
 	"github.com/jinzhu/gorm"
-	"github.com/satori/go.uuid"
+	"github.com/kxiaong/blog/library/db"
+	uuid "github.com/satori/go.uuid"
 )
 
 type User struct {

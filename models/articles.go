@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/blog/library/db"
+	"github.com/kxiaong/blog/library/db"
 )
 
 type Article struct {

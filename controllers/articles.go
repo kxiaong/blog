@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/blog/models"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/kxiaong/blog/models"
 )
 
 func ArticleList(c *gin.Context) {

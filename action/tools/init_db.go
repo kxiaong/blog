@@ -1,8 +1,8 @@
 package tools
 
 import (
-	"github.com/blog/library/db"
-	"github.com/blog/models"
+	"github.com/kxiaong/blog/library/db"
+	"github.com/kxiaong/blog/models"
 	"github.com/urfave/cli"
 )
 

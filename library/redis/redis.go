@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/blog/conf"
 	GoRedis "github.com/go-redis/redis"
+	"github.com/kxiaong/blog/conf"
 )
 
 var GoRedisClient *GoRedis.Client

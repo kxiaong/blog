@@ -3,10 +3,9 @@ package admin
 import (
 	"fmt"
 
-	"mysite/library/log"
-	"mysite/models"
-
 	"github.com/gin-gonic/gin"
+	"github.com/kxiaong/blog/library/log"
+	"github.com/kxiaong/blog/models"
 	"github.com/op/go-logging"
 )
 

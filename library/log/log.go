@@ -8,7 +8,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/blog/conf"
+	"github.com/kxiaong/blog/conf"
 	logging "github.com/op/go-logging"
 )
 

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/blog/conf"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/kxiaong/blog/conf"
 )
 
 var DB *gorm.DB

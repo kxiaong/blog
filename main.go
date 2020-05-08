@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/blog/action/tools"
-	"github.com/blog/action/web"
+	"github.com/kxiaong/blog/action/tools"
+	"github.com/kxiaong/blog/action/web"
 	"github.com/urfave/cli"
 )
 

@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/blog/conf"
-	"github.com/blog/library/db"
+	"github.com/kxiaong/blog/conf"
+	"github.com/kxiaong/blog/library/db"
 )
 
 func CreateTable(noPrompt bool) error {

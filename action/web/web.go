@@ -1,11 +1,11 @@
 package web
 
 import (
-	"github.com/blog/conf"
-	"github.com/blog/controllers"
-	"github.com/blog/library/db"
-	"github.com/blog/library/log"
-	"github.com/blog/library/redis"
+	"github.com/kxiaong/blog/conf"
+	"github.com/kxiaong/blog/controllers"
+	"github.com/kxiaong/blog/library/db"
+	"github.com/kxiaong/blog/library/log"
+	"github.com/kxiaong/blog/library/redis"
 
 	"github.com/gin-gonic/gin"
 	"github.com/urfave/cli"

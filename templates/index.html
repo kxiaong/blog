@@ -1,13 +1,15 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>沐雨听风 -- 博客小站</title>
-  </head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
   <body>
-    {{ template "header"}}
-    <p>Hello world</p>
-    {{ template "footer"}}
+    {{ template "sidebar" }}
+    {{ template "content" .}}
   </body>
-</html>
+</html> 

@@ -49,11 +49,16 @@ func LetsRocknRoll() {
 	engine.LoadHTMLGlob("templates/*")
 
 	engine.GET("/", controllers.Index)
-
-	ArticleApi := engine.Group("/article")
+	ArticleApi := engine.RouterGroup.Group("/article")
 	{
 		ArticleApi.GET("/list", controllers.ArticleList)
 		ArticleApi.POST("/create", controllers.CreateArticle)
+	}
+
+	PostApi := engine.RouterGroup.Group("/post")
+	{
+		PostApi.GET("/list", controllers.ListPost)
+		PostApi.POST("/create", controllers.CreatePost)
 	}
 
 	engine.Run(conf.C.Web.ListenPort)

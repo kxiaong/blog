@@ -47,3 +47,17 @@ func CreateArticle(c *gin.Context) {
 	//}
 	c.JSON(http.StatusOK, gin.H{"status": "ok"})
 }
+
+func ListPost(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"id":      1,
+		"comment": "this is my first comment",
+		"author":  "kxiaong",
+	})
+}
+
+func CreatePost(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+	})
+}
